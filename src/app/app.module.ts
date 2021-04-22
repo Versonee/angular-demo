@@ -40,24 +40,28 @@ const modules = [
   FormsModule,
   ReactiveFormsModule
 ];
+const components = [
+  AppComponent,
+  StageNavigationComponent,
+
+  StageComponent,
+  DefinitionComponent,
+  ChooseProductsComponent,
+  ExcludeProductsComponent,
+  BonusProductsComponent,
+  ProductsLimitComponent,
+  ChooseClientsComponent,
+  ExcludeClientsComponent,
+  ClientsLimitComponent,
+  SummaryComponent,
+  PromotionListComponent,
+  PromotionComponent,
+];
 
 @NgModule({
   declarations: [
-    AppComponent,
-    StageNavigationComponent,
     StageDirective,
-    StageComponent,
-    DefinitionComponent,
-    ChooseProductsComponent,
-    ExcludeProductsComponent,
-    BonusProductsComponent,
-    ProductsLimitComponent,
-    ChooseClientsComponent,
-    ExcludeClientsComponent,
-    ClientsLimitComponent,
-    SummaryComponent,
-    PromotionListComponent,
-    PromotionComponent,
+    [...components]
   ],
   imports: [
     BrowserModule,
@@ -65,6 +69,9 @@ const modules = [
     [...modules]
   ],
   exports: [...modules],
+  entryComponents: [
+    [...components]
+  ],
   providers: [StageService],
   bootstrap: [AppComponent]
 })

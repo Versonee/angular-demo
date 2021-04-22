@@ -43,7 +43,6 @@ const modules = [
 const components = [
   AppComponent,
   StageNavigationComponent,
-
   StageComponent,
   DefinitionComponent,
   ChooseProductsComponent,

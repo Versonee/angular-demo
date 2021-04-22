@@ -69,6 +69,6 @@ export class DefinitionComponent implements StageInterface {
       id,
     };
     localStorage.setItem('definitionForm', JSON.stringify(definitionFormObject));
-    this.childEventEmitter.emit(this.marketingName !== '');
+    this.childEventEmitter.emit(this.marketingName !== '' || this.technicalName !== '');
   }
 }

@@ -1,0 +1,48 @@
+@import '../../../../assets/style/variables';
+
+.separator-horizontal{
+  width:100%;
+  height:3px;
+  background: white;
+}
+
+.summary-container{
+  box-sizing: border-box;
+  padding: 0 25px;
+  width:100%;
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  flex-direction: column;
+  .summary-header{
+    height:50px;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    font-weight: bold;
+    font-size:20px;
+  }
+  .summary-button{
+    margin:50px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;;
+    color:white;
+    font-size:20px;
+    min-width:200px;
+    width:40%;
+    height:40px;
+    background: $active-color;
+    border-radius: 10px;
+    text-transform: uppercase;
+    cursor: pointer;
+    user-select: none;
+  }
+  .validation-error{
+    background: $active-color;
+    color:white;
+    padding:5px 10px;
+    border-radius: 10px;
+
+  }
+}

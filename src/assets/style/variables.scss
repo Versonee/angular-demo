@@ -1,0 +1,41 @@
+$background-grey: #EBEDF0;
+$active-color:#910000;
+$info-color:#9C0526;
+$grey:#535353;
+$background-grey:#EBEDF0;
+$disabled:#D6DAE1;
+$disabled-text:#96999E;
+
+
+@mixin additional-info {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  width:16px;
+  height: 16px;
+  border-radius: 50%;
+  background: $info-color;
+  color:white;
+  font-weight: bold;
+  font-size:12px;
+  cursor:pointer;
+  position:relative;
+}
+@mixin tooltip {
+  visibility:hidden;
+  text-align:center;
+  position: absolute;
+  z-index: 1;
+  padding: 2px 5px;
+  border-radius:5px;
+  font-size:12px;
+  background: $info-color;
+  top:-20px;
+  transition: .4s;
+  opacity:0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width:auto;
+  white-space: nowrap;
+}

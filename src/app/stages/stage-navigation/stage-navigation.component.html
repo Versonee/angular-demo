@@ -1,0 +1,12 @@
+<div class="stage-navigation">
+  <ul class="stages">
+    <li class="stage" id="stage-{{i}}" *ngFor = "let item of stages; index as i" [class.disabled]="disabled.includes(i) && !nameExists" [class.active] = "i === selected" (click)="handleClick(i)">
+      <div class="stage-index">{{i+1}}</div>
+      <div class="stage-title">{{item.itemName}}</div>
+      <div *ngIf="item.info" class="additional-info">i
+        <span class="tooltip">{{item.info}}</span>
+      </div>
+    </li>
+  </ul>
+</div>
+

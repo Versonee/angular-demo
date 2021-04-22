@@ -1,0 +1,73 @@
+@import '../../../assets/style/variables';
+
+
+.stage-navigation{
+
+  .stages{
+    margin:0;
+    list-style: none;
+
+    .stage{
+      $size:50px;
+      background: $background-grey;
+      height: $size;
+      flex-direction: row;
+      align-items: center;
+      margin: 3px 3px 3px 0;
+      display: grid;
+      grid-template-columns: 50px 1fr 30px;
+      &:first-child{
+        margin-top:0 !important;
+      }
+      .stage-index{
+
+        position:relative;
+        left:-$size/2;
+        width:$size;
+        height:$size;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color:white;
+        font-size: 30px;
+        border-radius: 50%;
+        background: $grey;
+      }
+      .stage-title{
+        text-transform: uppercase;
+        font-size: 18px;
+        font-family: Arial, serif;
+      }
+      .additional-info{
+        @include additional-info;
+
+        .tooltip{
+         @include tooltip;
+        }
+        &:hover .tooltip{
+          visibility: visible;
+          opacity:1;
+        }
+      }
+      &.active{
+        margin: 3px 0 3px 0;
+        .stage-index{
+          background: $active-color;
+        }
+        .stage-title{
+          font-weight: bold;
+        }
+      }
+      &.disabled{
+        .stage-index{
+          background: $disabled;
+          color:$disabled-text;
+        }
+        .stage-title{
+          color:$disabled-text;
+        }
+      }
+
+    }
+  }
+}

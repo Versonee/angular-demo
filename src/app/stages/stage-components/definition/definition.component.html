@@ -1,0 +1,162 @@
+<div class="definition">
+
+  <div class="description-container">
+    <div class="definition-header">
+      <div class="definition-title">Description</div>
+      <div class="definition-info">* is required</div>
+    </div>
+    <div class="separator-horizontal"></div>
+
+
+    <mat-form-field class="input-field">
+      <div class="symbol-required">*</div>
+      <div class="additional-info">i
+        <span class="tooltip">Lorem ipsum</span>
+      </div>
+      <mat-label>Marketing name</mat-label>
+      <input matInput [(ngModel)]="marketingName" (ngModelChange)="updateDraft()" value="{{marketingName}}">
+    </mat-form-field>
+
+    <mat-form-field class="input-field">
+      <div class="additional-info">i
+        <span class="tooltip">Lorem ipsum</span>
+      </div>
+      <mat-label>Technical name</mat-label>
+      <input matInput [(ngModel)]="technicalName" (ngModelChange)="updateDraft()" value="{{technicalName}}">
+    </mat-form-field>
+
+    <mat-form-field class="textarea-field">
+      <div class="additional-info">i
+        <span class="tooltip">Lorem ipsum</span>
+      </div>
+      <mat-label>Description</mat-label>
+      <textarea rows="10" matInput [(ngModel)]="description" (ngModelChange)="updateDraft()" value="{{description}}"></textarea>
+    </mat-form-field>
+
+    <div class="tutorial-container">
+      <div class="definition-header">
+        <div class="definition-title">Catalog promotion tutorial</div>
+      </div>
+      <div class="separator-horizontal"></div>
+      <div class="paragraph">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+        when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+        It has survived not only five centuries, but also the leap into electronic typesetting,
+        remaining essentially unchanged.
+      </div>
+      <div class="paragraph">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+        when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+        It has survived not only five centuries, but also the leap into electronic typesetting,
+        remaining essentially unchanged.
+      </div>
+      <div class="paragraph">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+        when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+        It has survived not only five centuries, but also the leap into electronic typesetting,
+        remaining essentially unchanged.
+      </div>
+    </div>
+  </div>
+
+  <div class="separator-vertical"></div>
+
+  <div class="conditions-container">
+    <div class="definition-header">
+      <div class="definition-title">Conditions</div>
+      <div class="definition-info">* is required</div>
+    </div>
+    <div class="separator-horizontal"></div>
+
+    <mat-form-field class="input-field">
+      <div class="symbol-required">*</div>
+      <div class="additional-info">i
+        <span class="tooltip">Lorem ipsum</span>
+      </div>
+      <mat-select placeholder="Category" [(ngModel)]="category" (ngModelChange)="updateDraft()" value="{{category}}" >
+        <mat-option *ngFor="let category of categories" [value]="category">
+          {{category}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="input-field">
+      <div class="symbol-required">*</div>
+      <div class="additional-info">i
+        <span class="tooltip">Lorem ipsum</span>
+      </div>
+      <mat-select placeholder="Type" [(ngModel)]="type" (ngModelChange)="updateDraft()" value="{{type}}">
+        <mat-option *ngFor="let type of types" [value]="type">
+          {{type}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="input-field no-fill">
+      <div class="additional-info">i
+        <span class="tooltip">Lorem ipsum</span>
+      </div>
+      <mat-label>Benefit amount</mat-label>
+      <input type="number" matInput [(ngModel)]="benefitAmount" (ngModelChange)="updateDraft()" value="{{benefitAmount}}">
+    </mat-form-field>
+
+    <div class="separator-horizontal"></div>
+
+    <div class="date-container">
+      <div class="additional-info">i
+        <span class="tooltip">Lorem ipsum</span>
+      </div>
+      <mat-form-field class="input-field input-date">
+        <div class="symbol-required fix-position">*</div>
+        <mat-label>Start date</mat-label>
+        <input matInput [min]="currentDay" [max]="finishDate" [matDatepicker]="picker1" [(ngModel)]="startDate" (ngModelChange)="updateDraft()" value="{{startDate | date:'yyyy-MM-dd'}}">
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field class="input-field input-date">
+        <mat-label>Finish date</mat-label>
+        <input matInput [min]="startDate || currentDay" [matDatepicker]="picker2" [(ngModel)]="finishDate" (ngModelChange)="updateDraft()" value="{{finishDate | date:'yyyy-MM-dd'}}">
+        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2></mat-datepicker>
+      </mat-form-field>
+    </div>
+
+
+
+    <div class="radio-container">
+      <div class="additional-info">i
+        <span class="tooltip">Lorem ipsum</span>
+      </div>
+      <label class="label-radio">
+        <input class="form-check-input" type="radio" name="mode" [value]=1 [(ngModel)]="radioOption" (ngModelChange)="updateDraft()">
+        Business conditions
+      </label>
+      <label class="label-radio">
+        <input class="form-check-input" type="radio" name="mode" [value]=2 [(ngModel)]="radioOption" (ngModelChange)="updateDraft()">
+        Base price 100%
+      </label>
+
+    </div>
+
+
+    <div class="other-promotions-container">
+      <div class="additional-info">i
+        <span class="tooltip">Lorem ipsum</span>
+      </div>
+      <mat-checkbox [(ngModel)]="otherPromotionsCheckbox" (ngModelChange)="updateDraft()" color="primary" class="example-margin">Connect with other promotions</mat-checkbox>
+    </div>
+    <div class="back-promotion-container">
+      <div class="additional-info">i
+        <span class="tooltip">Lorem ipsum</span>
+      </div>
+      <mat-checkbox [(ngModel)]="backPromotionsCheckbox" (ngModelChange)="updateDraft()" color="primary" class="example-margin">Back promotion</mat-checkbox>
+    </div>
+
+
+  </div>
+
+</div>

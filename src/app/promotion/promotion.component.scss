@@ -1,0 +1,35 @@
+@import '../../assets/style/variables';
+
+.page-container{
+  max-width:100%;
+  padding:50px;
+  display:flex;
+  flex-direction: row;
+  overflow: hidden;
+  @media(max-width: 1000px){
+    padding: 0;
+  }
+  .navigation-container{
+    width:30%;
+    @media(max-width: 1000px){
+      width:40%;
+    }
+  }
+  .stage-container{
+    width:70%;
+    background: $background-grey;
+    //padding: 0 30px;
+    @media(max-width: 1000px){
+      width:60%;
+    }
+  }
+  @media(max-width: 600px){
+    flex-direction: column;
+    .navigation-container{
+      width: 100%;
+    }
+    .stage-container{
+      width:100%;
+    }
+  }
+}

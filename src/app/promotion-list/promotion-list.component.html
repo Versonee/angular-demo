@@ -1,0 +1,17 @@
+<table>
+  <tr>
+    <th>Nazwa promocji</th>
+    <th>Edytuj</th>
+    <th>Usuń</th>
+  </tr>
+  <ng-container *ngFor="let promotion of promotionList; index as i">
+    <tr>
+      <td>{{promotion.marketingName}}</td>
+      <td><img class="image-edit" src="../../assets/images/edit.svg" alt="edit-icon" (click)="editElement(i)"></td>
+      <td><img class="image-delete" src="../../assets/images/delete.svg" alt="delete-icon" (click)="deleteElement(i)"></td>
+    </tr>
+  </ng-container>
+
+
+
+</table>

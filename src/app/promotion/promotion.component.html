@@ -1,0 +1,8 @@
+<div class="page-container">
+  <div class="navigation-container">
+    <app-stage-navigation [nameExists]="nameExists" [stages]="navigationStages" [disabledSteps]="disabledSteps" (selectionEmitter)="updateStage($event)"></app-stage-navigation>
+  </div>
+  <div class="stage-container">
+    <app-stage [stages]="stages" [currentStageIndex]="currentStage" (eventEmitter)="processInformation($event)"></app-stage>
+  </div>
+</div>
